@@ -62,11 +62,11 @@ ISR(TIMER2_COMPA_vect)
 {
   static uint8_t counter = 0;
 
-  static uint8_t prewindC = 0;  //SET PORTC
-  static uint8_t prewindB = 0;  //SET PORTB
+  static uint8_t prewindC = 0;
+  static uint8_t prewindB = 0;
 
-  PORTC = prewindC;
-  PORTB = prewindB;
+  PORTC = prewindC; //SET PORTC
+  PORTB = prewindB; //SET PORTB
 
   prewindC = sine[counter];
   prewindB = (sine[counter++]) >> 6;
